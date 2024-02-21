@@ -1,0 +1,16 @@
+{
+    "name": "noorani-mm/encoder-algorithm",
+    "autoload": {
+        "psr-4": {
+            "NooraniMm\\EncoderAlgorithm\\": "src/"
+        }
+    },
+    "description": "This project is for universe",
+    "authors": [
+        {
+            "name": "Mohammad Mahdi",
+            "email": "matio.nora2000@gmail.com"
+        }
+    ],
+    "require": {}
+}
