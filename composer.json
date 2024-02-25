@@ -5,7 +5,10 @@
             "NooraniMm\\EncoderAlgorithm\\": "src/"
         }
     },
-    "description": "This project is for universe",
+    "keywords": ["php", "encyption", "decryption", "encode", "decode", "encoder", "decoder"],
+    "description": "In this package, English text is encrypted and decoded.",
+    "minimum-stability": "stable",
+    "license": "MIT",
     "authors": [
         {
             "name": "Mohammad Mahdi",
