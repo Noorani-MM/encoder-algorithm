@@ -5,6 +5,7 @@
             "NooraniMm\\EncoderAlgorithm\\": "src/"
         }
     },
+    "type": "library",
     "keywords": ["php", "encyption", "decryption", "encode", "decode", "encoder", "decoder"],
     "description": "In this package, English text is encrypted and decoded.",
     "minimum-stability": "stable",
