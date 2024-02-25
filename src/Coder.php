@@ -44,7 +44,7 @@ class Coder
      * @throws InvalidKeyException
      * @throws InvalidEncodeException
      */
-    public static function decode(string $encode)
+    public static function decode(string $encode): string
     {
         $length = strlen($encode);
         $key1 = Key::generator($encode[0], [$encode[$length - 4], $encode[$length - 2]]);
