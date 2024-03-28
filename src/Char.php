@@ -21,4 +21,24 @@ class Char
         }
         return $binary;
     }
+
+    public function bytes(): false|array
+    {
+        return $this->bytes;
+    }
+
+    public function char(): string
+    {
+        return $this->char;
+    }
+
+    public static function char_by_binary(string $binary): Char
+    {
+        $segments = str_split($binary, 8);
+        $chars = '';
+        foreach ($segments as $segment) {
+            $chars .= pack('H*', base_convert($segment, 2, 16));
+        }
+        return new self($chars);
+    }
 }
