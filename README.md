@@ -1,5 +1,11 @@
-# Encoder 🔏
-In this package, English text is encrypted and decoded.
+# CryptoHandler 🔏
+
+This package provides a simple encryption and decryption functionality for securing sensitive information in your PHP applications. 
+It offers easy-to-use methods for encrypting plaintext data into ciphertext and decrypting ciphertext back into its original plaintext form.
+
+## Features 🔧
+- Ease of Use: Simple and straightforward API for encryption and decryption operations.
+- Well-Documented: Comprehensive documentation and usage examples to help you get started quickly.
 
 ## How to install 
 
@@ -7,19 +13,22 @@ In this package, English text is encrypted and decoded.
 composer require noorani-mm/encoder-algorithm
 ```
 
-## How to use 
+## How to use ⚒️
 
-To encrypt text you have to use `encode` function this function will return encoded context
+### Encrypting Content
 
+To encrypt content, use the `Encrypt` method:
 ```php
-$content = 'Hello this is the content';
-
-$encoded = \NooraniMm\EncoderAlgorithm\Coder::encode($content); // GF0944O_sfvܠ|{bpm铉czܠ|{blܠ|jiunlh{0019CCBA
+$content = "Your content here";
+$encrypted_content = CryptoHandler::Encrypt($content);
+echo $encrypted_content; // a6908a8ddf9c90918b9a918bdf979a8d9a
 ```
 
-To decrypt, encoded content you have to use `decode` function. This function will return decoded content. 
-- On invalid parameter this function throw `InvalidEncodedException`
+### Decrypting Content
 
+To decrypt content, use the `Decrypt` method:
 ```php
-$decoded = \NooraniMm\EncoderAlgorithm\Coder::decode($encoded); // Hello this is the content
+$hex = "a6908a8ddf9c90918b9a918bdf979a8d9a";
+$decrypted_content = CryptoHandler::Decrypt($hex);
+echo $decrypted_content; // Your content here
 ```
