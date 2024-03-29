@@ -6,16 +6,28 @@ class CryptoHandler
 {
     public static function Encrypt(string $content): string
     {
-        $char = new Char($content);
-        $rev_binary = self::reverse_bite($char->binary());
-        return self::binary_to_hex($rev_binary);
+        $data = Char::char_array(str_split($content));
+
+        $rev_binaries = array_map(function (Char $char) {
+            return self::reverse_bite($char->binary());
+        }, $data);
+
+        $hexes = array_map(function (string $binary) {return self::binary_to_hex($binary); }, $rev_binaries);
+        return implode('', $hexes);
     }
 
-    public static function Decrypt(string $hex): Char
+    public static function Decrypt(string $hex): string
     {
-        $binary = self::hex_to_binary($hex);
-        $rev_bite = self::reverse_bite($binary);
-        return Char::char_by_binary($rev_bite);
+        $hexes = str_split($hex, 2);
+        $binaries = array_map(function ($hex) {
+            return self::hex_to_binary($hex);
+        }, $hexes);
+
+        $data = array_map(function ($binary) {
+            return chr(base_convert(self::reverse_bite($binary), 2, 10));
+        }, $binaries);
+
+        return implode('', $data);
     }
 
     protected static function reverse_bite(string $binary): string
