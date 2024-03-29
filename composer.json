@@ -7,7 +7,7 @@
     },
     "type": "library",
     "keywords": ["php", "encyption", "decryption", "encode", "decode", "encoder", "decoder"],
-    "description": "In this package, English text is encrypted and decoded.",
+    "description": "This package provides a simple encryption and decryption functionality for securing sensitive information in your PHP applications. It offers easy-to-use methods for encrypting plaintext data into ciphertext and decrypting ciphertext back into its original plaintext form.",
     "minimum-stability": "stable",
     "license": "MIT",
     "authors": [
